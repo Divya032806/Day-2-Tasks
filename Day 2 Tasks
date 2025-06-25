@@ -1,0 +1,44 @@
+Create database Demo;
+use Demo;
+
+
+CREATE TABLE users (
+  id int PRIMARY KEY,
+  name varchar(100) not null,
+  email varchar(100),
+  age int DEFAULT NULL
+);
+
+insert into users (id, name, email, age) values 
+(1, 'Anu', 'anu123@gmail.com', 23),
+(2, 'Boby', Null, Null),
+(3, 'Cary', 'cary345@gmail.com', Null);
+
+
+
+Select * from users;
+
+update users 
+set age = 27
+where id = 2;
+
+update users 
+set age = 30
+where id = 3;
+
+insert into users (id, name, email) values
+  (4, 'Dave', 'dave@web.com'); 
+
+ UPDATE users
+set email = NULL
+where name = 'Cary';
+
+
+ select * from users 
+  where email is NULL or age is NULL;
+
+  delete from users
+where name = 'Dave';
+
+delete from users
+where age >27
